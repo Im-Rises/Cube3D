@@ -4,12 +4,11 @@ float[][] projection = {
 };
 
 float[][] point = {
-  {1}, 
-  {1}, 
-  {1}
+  {100}, 
+  {50}, 
+  {25}
 };
 
-//FAUX, revoir cette fonction :
 float[][] matrixMultiplication(float[][] matrix1, float[][] matrix2)
 {
   int matrix1Row = matrix1.length;
@@ -23,18 +22,18 @@ float[][] matrixMultiplication(float[][] matrix1, float[][] matrix2)
     return null;
   } else
   {
-    float[][] result = new float[matrix2Row][matrix1Column]; 
+    float[][] result = new float[matrix1Row][matrix2Column]; 
 
     for (int i =0; i <matrix1Row; i++)
     {
       for (int j =0; j <matrix2Column; j++)
       {
         float calcValue=0;
-        for (int k =0; k < matrix2Column; k++)
+        for (int k =0; k < matrix1Column; k++)
         {
-          calcValue+=matrix1[k][i]*matrix2[j][k];
+          calcValue+=matrix1[i][k]*matrix2[k][j];
         }
-        result[j][i]=calcValue;
+        result[i][j]=calcValue;
       }
     }
     return result;
