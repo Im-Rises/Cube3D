@@ -16,7 +16,7 @@ void settings()
 
 void setup()
 {  
-  float sizeOfCube=100;//Define the size of the cube
+  float sizeOfCube=0.5;//Define the size of the cube
 
   //-----------POINTS SETUP :--------------//
   pointsArray[0]= new PVector(sizeOfCube, sizeOfCube, sizeOfCube);
@@ -75,8 +75,8 @@ void draw()
 
 
     //-----------PERSPECTIVE PROJECTION :---------------//
-    /*
-     float distance =10;//Distance of the object
+    
+     float distance =1.5;//Distance of the object
      float valMatrixProj = 1/(distance-pointRotated.z);
      
      //Projection matrix
@@ -85,15 +85,15 @@ void draw()
      {valMatrixProj, 0, 0}, 
      {0, valMatrixProj, 0}
      };
-     pointRotated.mult(100);
-     */
+     pointRotated.mult(200);
+     
 
-
+/*
     float[][] projectionMatrix = {
       {1, 0, 0}, 
       {0, 1, 0}
     };
-
+*/
 
     //-----------MATRIX PROJECTION :------------//
     PVector pointProjected = matrixMultiplication(projectionMatrix, pointRotated);
