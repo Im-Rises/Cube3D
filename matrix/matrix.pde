@@ -1,13 +1,4 @@
-float[][] projection = {
-  {1, 0, 0}, 
-  {0, 1, 0}
-};
-
-float[][] point = {
-  {100}, 
-  {50}, 
-  {25}
-};
+/*--------------------------------MATRIX MULTIPLICATION FUNCTIONS-----------------------------*/
 
 float[][] matrixMultiplication(float[][] matrix1, float[][] matrix2)
 {
@@ -40,6 +31,17 @@ float[][] matrixMultiplication(float[][] matrix1, float[][] matrix2)
   }
 }
 
+
+
+PVector matrixMultiplication(float[][] matrix1, PVector point)
+{
+  float[][] pointConvertedInMatrix = pointPvectorToMatrix(point);
+  return matrixToPointPvector(matrixMultiplication(matrix1, pointConvertedInMatrix));
+}
+
+
+/*--------------------------------MATRIX PRINT FUNCTIONS-----------------------------*/
+
 void printMatrix(float[][] matrix)
 {
   int matrixRow = matrix.length;
@@ -57,10 +59,28 @@ void printMatrix(float[][] matrix)
   }
 }
 
-void setup()
+void printMatrix(PVector matrix)
 {
-  printMatrix(projection);
-  printMatrix(point);
-  float[][] result = matrixMultiplication(projection, point);
-  printMatrix(result);
+  printMatrix(pointPvectorToMatrix(matrix));
+}
+
+
+/*--------------------------------CONVERSION FUNCTIONS-----------------------------*/
+
+float[][] pointPvectorToMatrix(PVector pvector)
+{
+  float[][] matrix = new float[3][1];
+  matrix[0][0]=pvector.x;
+  matrix[1][0]=pvector.y;
+  matrix[2][0]=pvector.z;
+
+  return matrix;
+}
+
+PVector matrixToPointPvector(float[][] matrix)
+{
+  if (matrix.length>2)
+    return (new PVector(matrix[0][0], matrix[1][0], matrix[2][0]));
+  else
+    return (new PVector(matrix[0][0], matrix[1][0]));
 }
