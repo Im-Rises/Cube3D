@@ -107,6 +107,7 @@ void draw()
 
   //-----------POINTS CONNECTION :---------------//
   strokeWeight(2);//define the size of the drawn lines and points
+  
   pointConnection(indexPVectorLine, 0, 1);
   pointConnection(indexPVectorLine, 1, 2);
   pointConnection(indexPVectorLine, 2, 3);
@@ -122,12 +123,17 @@ void draw()
   pointConnection(indexPVectorLine, 3, 7);
   pointConnection(indexPVectorLine, 4, 0);
 
-
   //-----------ANGLE ROTATION :---------------//
   angle+=0.03;//Angle rotation incrementation
 
   if (angle>=PI*2)
     angle=0;
+    
+  PVector[] pointTest = new PVector[2];
+  pointTest[0]=new PVector(10,10);
+  pointTest[1] = new PVector(100,100);
+    
+  pointConnectionAlgorithmNaive(pointTest,0,1);
 }
 
 
@@ -136,4 +142,38 @@ void draw()
 public void pointConnection(PVector[] indexPVectorLine, int point1Index, int point2Index)
 {
   line(indexPVectorLine[point1Index].x, indexPVectorLine[point1Index].y, indexPVectorLine[point2Index].x, indexPVectorLine[point2Index].y);
+}
+
+
+//Naive line-drawing 
+public void pointConnectionAlgorithmNaive(PVector[] indexPVectorLine, int point1Index, int point2Index)
+{
+  float dx=indexPVectorLine[point2Index].x-indexPVectorLine[point1Index].x;
+  float dy=indexPVectorLine[point2Index].y-indexPVectorLine[point1Index].y;
+  
+  for (float x=indexPVectorLine[point1Index].x;x<indexPVectorLine[point2Index].x;x+=0.05)
+  {
+    float y = indexPVectorLine[point1Index].y+dy*(x-indexPVectorLine[point1Index].x)/dx;
+    point(x,y);
+  }
+}
+
+public void pointConnectionAlgorithmBresenham(PVector[] indexPVectorLine, int point1Index, int point2Index)
+{
+  int dx=(int)indexPVectorLine[point2Index].x-(int)indexPVectorLine[point1Index].x;
+  int dy=(int)indexPVectorLine[point2Index].y-(int)indexPVectorLine[point1Index].y;
+  
+  int d = 2*dy-dx;
+  int y = (int)indexPVectorLine[point1Index].y;
+
+for (int x=(int)indexPVectorLine[point1Index].x;x<indexPVectorLine[point2Index].x;x++)
+  {
+   point(x,y);
+   if (d >0)
+   {
+     y++;
+     d=d -2*dx;
+   }
+   d=d+2*dy;
+  }
 }
