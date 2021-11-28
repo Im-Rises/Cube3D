@@ -11,11 +11,11 @@ The app display a 3D cube in 2D with the use of matrices :
 
 ## Architecure
 
-matrix.pde: set of matrix functions (multiplication, print, ...)
-cube3D.pde: main program that display the Cube in 3D
+matrix.pde: set of matrix functions (multiplication, print, ...)  
+cube3D.pde: main program that display the Cube in 3D  
 
 ## Demo  
-![demo]("./README_files/demoCube3D.gif")
+<img src="./README_files/demoCube3D.gif" width=320 >
 
 ## Documentation  
 - https://en.wikipedia.org/wiki/3D_projection 
