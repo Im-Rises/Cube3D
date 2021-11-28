@@ -9,7 +9,7 @@ The app display a 3D cube in 2D with the use of matrices :
 - Rotation Matrix
 - Perspective Matrix
 
-## Architecure
+## Files
 
 matrix.pde: set of matrix functions (multiplication, print, ...)  
 cube3D.pde: main program that display the Cube in 3D  
