@@ -1,6 +1,6 @@
 # Cube3D
 
-3D cube made with Processing.
+3D cube in Processing.
 
 ## Description  
 App made to understand the basics of 3D display.
