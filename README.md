@@ -3,7 +3,7 @@
 3D cube made with Processing.
 
 ## Description  
-App made to understand the basic of 3D display.
+App made to understand the basics of 3D display.
 The app display a 3D cube in 2D with the use of matrices :
 - Projection matrix
 - Rotation Matrix
