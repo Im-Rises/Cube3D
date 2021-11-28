@@ -124,7 +124,7 @@ void draw()
   pointConnection(indexPVectorLine, 4, 0);
 
   //-----------ANGLE ROTATION :---------------//
-  angle+=0.03;//Angle rotation incrementation
+  angle+=0.02;//Angle rotation incrementation
 
   if (angle>=PI*2)
     angle=0;
