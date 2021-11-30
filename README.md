@@ -21,4 +21,3 @@ cube3D.pde: main program that display the Cube in 3D
 - https://en.wikipedia.org/wiki/3D_projection 
 - https://en.wikipedia.org/wiki/Rotation_matrix 
 - https://youtu.be/p4Iz0XJY-Qk 💗
-
