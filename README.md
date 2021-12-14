@@ -18,7 +18,7 @@ cube3D.pde: main program that display the Cube in 3D
 
 ## Demo
 
-<img src="./README_files/demoCube3D.gif" width=320 >
+<img src="./README_files/demoCube3D.gif" width=320 >  
 
 ## Documentation  
 
