@@ -1,6 +1,6 @@
 # Cube3D
 
-3D cube in Processing.
+3D cube made with Processing.
 
 ## Description
 
