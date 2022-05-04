@@ -13,8 +13,11 @@ The app display a 3D cube in 2D with the use of matrices :
 
 ## Files
 
-matrix.pde: set of matrix functions (multiplication, print, ...)  
-cube3D.pde: main program that display the Cube in 3D  
+matrix.pde: 
+- set of matrix functions (multiplication, print, ...)  
+
+cube3D.pde: 
+- main program that display the Cube in 3D  
 
 ## Demo
 
